@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12345a">
+<title>PSC Vacancy Hub — Nepal Government Vacancies</title>
+<style>
+:root{--navy:#12345a;--blue:#0875e1;--pale:#eef6ff;--ink:#17324d;--muted:#61758c;--line:#dbe6f2;--green:#17865d;--red:#bd3434}
+*{box-sizing:border-box}body{margin:0;font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f5f8fc}
+header{background:linear-gradient(110deg,#102b4a,#214e79);color:white;padding:18px max(20px,calc((100% - 1220px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.brand{display:flex;gap:13px;align-items:center}.logo{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--navy);font-size:27px}.brand h1{font-size:23px;margin:0}.brand p{margin:2px 0 0;color:#d8e8fa;font-size:13px}
+nav{display:flex;gap:16px;flex-wrap:wrap}nav a{color:white;text-decoration:none;font-weight:600;font-size:14px}
+main{max-width:1220px;margin:20px auto;padding:0 18px}.hero{border-radius:16px;padding:28px;background:linear-gradient(105deg,rgba(12,43,75,.96),rgba(20,79,127,.85)),linear-gradient(30deg,#416e95,#c6e2f8);color:white;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:center;box-shadow:0 8px 24px #18395b1a}
+.hero h2{font-size:clamp(26px,3vw,38px);line-height:1.12;margin:0 0 12px}.hero p{margin:0;color:#e3effb;max-width:650px}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.stat{background:#ffffffed;color:var(--navy);padding:14px;border-radius:11px}.stat b{display:block;font-size:21px}.stat span{font-size:12px;color:var(--muted)}
+.layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(280px,.9fr);gap:20px;margin-top:20px}.panel{background:white;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 3px 12px #17324d08}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:10px}.filters input,.filters select,.subscribe input{width:100%;padding:11px 12px;border:1px solid #cbd9e8;border-radius:8px;background:white;color:var(--ink);font:inherit;min-width:0}.filter-actions{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+button,.button{border:0;border-radius:8px;background:var(--blue);color:white;font-weight:700;padding:10px 14px;cursor:pointer;font:inherit;text-decoration:none;display:inline-block}.secondary{background:#eaf3ff;color:#14568e}.plain{background:transparent;color:#285477;border:1px solid var(--line)}button:hover,.button:hover{filter:brightness(.96)}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 12px}.section-head h3{margin:0;font-size:19px}.tabs{display:flex;gap:7px;flex-wrap:wrap}.tab{background:#eef3f9;color:#35516e;padding:8px 12px}.tab.active{background:var(--blue);color:white}
+.vacancy{border:1px solid var(--line);border-radius:11px;padding:15px;margin-bottom:11px;background:#fff}.vac-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.vacancy h4{margin:0 0 3px;color:#0d559b;font-size:17px}.sub{color:var(--muted);font-size:13px}.tags{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.tag{font-size:12px;padding:4px 8px;border-radius:999px;background:#edf4fb;color:#345778}.status{font-size:12px;border-radius:6px;padding:4px 8px;font-weight:700;white-space:nowrap}.open{background:#e1f6eb;color:#13754e}.closed{background:#e8edf3;color:#5a6b7c}.vac-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1px solid #edf1f6;padding-top:10px;font-size:13px;color:#526b85}.actions{display:flex;gap:7px}.save{background:#f1f6fb;color:#214f78;border:1px solid #dce8f3;padding:7px 10px}.save.saved{background:#fff3d7;color:#7a5300}
+.side h3{margin:0 0 7px}.side p{color:var(--muted);font-size:13px}.subscribe{display:grid;gap:9px}.notice{font-size:12px;color:var(--muted);margin-top:8px}.side-section{margin-top:15px}.quick{display:grid;gap:8px}.quick a{color:#14568e;text-decoration:none;border-bottom:1px solid #edf1f6;padding:7px 0;font-size:14px}.checkrow{display:flex;align-items:center;gap:8px;font-size:14px;margin:10px 0}.checkrow input{width:17px;height:17px}
+.empty{text-align:center;padding:30px;color:var(--muted)}footer{text-align:center;color:#dce9f6;background:#102b4a;padding:18px;margin-top:30px;font-size:12px}
+.disclaimer{background:#fff8e8;border:1px solid #f0dba8;border-radius:9px;padding:12px;color:#71551a;font-size:12px;margin-top:14px}
+@media(max-width:850px){.hero{grid-template-columns:1fr}.layout{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(4,1fr)}}@media(max-width:520px){header{padding:15px}.brand h1{font-size:19px}.stats{grid-template-columns:1fr 1fr}.filters{grid-template-columns:1fr}.vac-top{align-items:flex-start}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="logo" aria-hidden="true">🇳🇵</div><div><h1>PSC Vacancy Hub</h1><p>Public Service Commission vacancies across Nepal</p></div></div>
+ <nav><a href="#vacancies">Vacancies</a><a href="#alerts">Notifications</a><a href="#links">Official links</a><a href="#about">About</a></nav>
+</header>
+<main>
+<section class="hero">
+ <div><h2>Don't miss your next government job opportunity.</h2><p>Find and track PSC vacancy notices across federal, provincial and local services — from assistant and 4th level through officer and gazetted posts.</p></div>
+ <div class="stats"><div class="stat"><b>All levels</b><span>Assistant to officer</span></div><div class="stat"><b>All services</b><span>Federal · Province · Local</span></div><div class="stat"><b>Filter fast</b><span>Level, group, status</span></div><div class="stat"><b>Save posts</b><span>Keep a shortlist</span></div></div>
+</section>
+<div class="layout">
+ <section>
+  <div class="panel">
+   <div class="filters">
+    <input id="search" placeholder="Search post, service, group or notice no." aria-label="Search vacancies">
+    <select id="commission" aria-label="Commission"><option value="">All commissions</option><option>Federal PSC</option><option>Provincial PSC</option><option>Local service</option></select>
+    <select id="level" aria-label="Level"><option value="">All levels</option><option>Assistant</option><option>4th Level</option><option>5th Level</option><option>6th Level</option><option>7th Level</option><option>8th Level</option><option>Gazetted 3rd Class</option><option>Gazetted 2nd Class</option><option>Gazetted 1st Class</option></select>
+    <select id="group" aria-label="Service group"><option value="">All groups</option><option>Civil Engineering</option><option>General Administration</option><option>Health</option><option>Education</option><option>Forestry</option><option>Agriculture</option><option>Other</option></select>
+   </div>
+   <div class="filter-actions"><button id="apply">Search vacancies</button><button class="plain" id="clear">Clear filters</button><span id="count" class="sub" style="align-self:center"></span></div>
+  </div>
+  <div class="section-head" id="vacancies"><h3>Vacancy board</h3><div class="tabs"><button class="tab active" data-status="all">All</button><button class="tab" data-status="open">Open (sample)</button><button class="tab" data-status="closed">Closed</button><button class="tab" data-status="saved">Saved</button></div></div>
+  <div id="results" aria-live="polite"></div>
+  <div class="disclaimer"><b>Important:</b> Sample listings below demonstrate the interface and are not a verified live vacancy feed. Always confirm the advertisement, eligibility and deadline on the relevant official PSC website.</div>
+ </section>
+ <aside>
+  <section class="panel side" id="alerts">
+   <h3>🔔 Vacancy alerts</h3><p>Choose how you want to be reminded when this site is connected to a live vacancy feed.</p>
+   <label class="checkrow"><input type="checkbox" id="browserAlerts"> Enable browser notifications</label>
+   <form class="subscribe" id="subscribeForm"><input type="email" id="email" placeholder="Your email address" required><button type="submit">Sign up for email alerts</button></form>
+   <div class="notice" id="alertMessage">Demo mode: alerts are not sent until an email service and vacancy data source are connected.</div>
+  </section>
+  <section class="panel side side-section" id="links">
+   <h3>Official PSC links</h3>
+   <div class="quick">
+    <a href="https://psc.gov.np/" target="_blank" rel="noopener">Federal Public Service Commission ↗</a>
+    <a href="https://ppsc.gandaki.gov.np/" target="_blank" rel="noopener">Gandaki Province Public Service Commission ↗</a>
+    <a href="https://ppsc.bagamati.gov.np/" target="_blank" rel="noopener">Bagmati Province PSC ↗</a>
+    <a href="https://ppsc.koshi.gov.np/" target="_blank" rel="noopener">Koshi Province PSC ↗</a>
+    <a href="https://ppsc.lumbini.gov.np/" target="_blank" rel="noopener">Lumbini Province PSC ↗</a>
+    <a href="https://ppsc.sudurpashchim.gov.np/" target="_blank" rel="noopener">Sudurpashchim Province PSC ↗</a>
+   </div>
+   <p class="notice">Check official sites for current advertisements. Some province URLs may change; verify through the commission's official portal.</p>
+  </section>
+  <section class="panel side side-section"><h3>How to use</h3><p>1. Search by post, level or group.<br>2. Save relevant notices.<br>3. Open the official advertisement to verify dates and eligibility.<br>4. Enable alerts after the site owner connects notification services.</p></section>
+ </aside>
+</div>
+</main>
+<footer id="about">PSC Vacancy Hub · Independent information tool · Not affiliated with any government body.<br>Always rely on the official advertisement for final details.</footer>
+<script>
+const vacancies = [
+ {id:1,title:"Gazetted Third Class Engineer (Civil)",commission:"Federal PSC",level:"Gazetted 3rd Class",group:"Civil Engineering",service:"Nepal Engineering Service · Civil Group",notice:"Illustrative notice: 17244–17249/082–83",deadline:"Verify official notice",status:"closed",url:"https://psc.gov.np/"},
+ {id:2,title:"Civil Engineer",commission:"Provincial PSC",level:"7th Level",group:"Civil Engineering",service:"Provincial Engineering Service · Sample listing",notice:"Sample only — no live notice data",deadline:"Check your province PSC",status:"open",url:"https://psc.gov.np/"},
+ {id:3,title:"Sub-Engineer (Civil)",commission:"Federal PSC",level:"5th Level",group:"Civil Engineering",service:"Engineering Service · Sample listing",notice:"Sample only — no live notice data",deadline:"Check official notice",status:"open",url:"https://psc.gov.np/"},
+ {id:4,title:"Section Officer / शाखा अधिकृत",commission:"Federal PSC",level:"Gazetted 3rd Class",group:"General Administration",service:"Administration Service · Sample listing",notice:"Sample only — no live notice data",deadline:"Check official notice",status:"open",url:"https://psc.gov.np/"},
+ {id:5,title:"Health Assistant",commission:"Provincial PSC",level:"5th Level",group:"Health",service:"Health Service · Sample listing",notice:"Sample only — no live notice data",deadline:"Check official notice",status:"closed",url:"https://psc.gov.np/"},
+ {id:6,title:"Assistant / सहायक",commission:"Local service",level:"Assistant",group:"General Administration",service:"Local Service · Sample listing",notice:"Sample only — no live notice data",deadline:"Check local advertisement",status:"open",url:"https://psc.gov.np/"}
+];
+let activeStatus="all";
+let saved=new Set(JSON.parse(localStorage.getItem("pscSaved")||"[]"));
+const $=id=>document.getElementById(id);
+function render(){
+ const q=$("search").value.trim().toLowerCase(), c=$("commission").value,l=$("level").value,g=$("group").value;
+ const shown=vacancies.filter(v=>(!q||[v.title,v.service,v.group,v.notice,v.level].join(" ").toLowerCase().includes(q))&&(!c||v.commission===c)&&(!l||v.level===l)&&(!g||v.group===g)&&(activeStatus==="all"||(activeStatus==="saved"?saved.has(v.id):v.status===activeStatus)));
+ $("count").textContent=`${shown.length} listing${shown.length===1?"":"s"}`;
+ $("results").innerHTML=shown.length?shown.map(v=>`<article class="vacancy"><div class="vac-top"><div><h4>${esc(v.title)}</h4><div class="sub">${esc(v.service)}</div></div><span class="status ${v.status==="open"?"open":"closed"}">${v.status==="open"?"Sample / verify":"Closed / sample"}</span></div><div class="tags"><span class="tag">${esc(v.commission)}</span><span class="tag">${esc(v.level)}</span><span class="tag">${esc(v.group)}</span></div><div class="vac-bottom"><div><b>${esc(v.notice)}</b><br><span>${esc(v.deadline)}</span></div><div class="actions"><button class="save ${saved.has(v.id)?"saved":""}" onclick="toggleSave(${v.id})">${saved.has(v.id)?"★ Saved":"☆ Save"}</button><a class="button" href="${v.url}" target="_blank" rel="noopener">Official site ↗</a></div></div></article>`).join(""):'<div class="panel empty">No matching vacancies. Try clearing a filter or changing your search.</div>';
+}
+function esc(s){return String(s).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
+function toggleSave(id){saved.has(id)?saved.delete(id):saved.add(id);localStorage.setItem("pscSaved",JSON.stringify([...saved]));render();}
+$("apply").onclick=render;$("search").addEventListener("keydown",e=>{if(e.key==="Enter")render()});
+["commission","level","group"].forEach(id=>$(id).addEventListener("change",render));
+$("clear").onclick=()=>{$("search").value="";$("commission").value="";$("level").value="";$("group").value="";activeStatus="all";document.querySelectorAll(".tab").forEach(t=>t.classList.toggle("active",t.dataset.status==="all"));render();};
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{activeStatus=t.dataset.status;document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===t));render();});
+$("browserAlerts").addEventListener("change",async e=>{if(!e.target.checked)return;if(!("Notification"in window)){ $("alertMessage").textContent="This browser does not support notifications.";e.target.checked=false;return;}const p=await Notification.requestPermission();$("alertMessage").textContent=p==="granted"?"Browser permission granted. Live vacancy alerts still require a connected data feed and background service.":"Notification permission was not granted.";if(p!=="granted")e.target.checked=false;});
+$("subscribeForm").addEventListener("submit",e=>{e.preventDefault();$("alertMessage").textContent="Email recorded only for this demo session. No email has been sent or stored on a server. Connect an email provider/backend to activate real alerts.";});
+render();
+</script>
+</body>
+</html>
